@@ -23,9 +23,9 @@ module Capistrano
     def sudo_if_needed(command)
       on roles(:app) do
         if fetch(:puma_monit_use_sudo)
-          backend.sudo command
+          sudo command
         else
-          backend.execute command
+          execute command
         end
       end
     end
